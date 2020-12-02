@@ -3,8 +3,8 @@ pipeline {
 	
 	environment {
 
-	  	GITHUB_ORGANIZATION = "KoolKubernetes"	
-      GITHUB_REPO = "cicd"
+	  	//GITHUB_ORGANIZATION = "KoolKubernetes"	
+      GITHUB_REPO = "Jenkins-Demos"
 	  	//DOCKERHUB_REGISTRY = "pf9sys/webapp01" This is no more required as it is declared in Jenkins as env. variable
       REPOSITORY_TAG="${DOCKERHUB_REGISTRY}:${env.BUILD_ID}"
       //APP_PATH="cicd/jenkins/webapp01"
@@ -18,7 +18,7 @@ pipeline {
       
           		cleanWs()
           		// git credentialsId: 'GitHub', url: "https://github.com/${GITHUB_ORGANIZATION}/${GITHUB_REPO}"
-              git url: "https://github.com/${GITHUB_ORGANIZATION}/${GITHUB_REPO}"
+              git url: "https://github.com/${GITHUB_REPO}"
 	        }
 	    }
 
@@ -33,7 +33,7 @@ pipeline {
       stage ('PUBLISH') {
         	environment {
               // make sure below credential is stored in Jenkins global credentials.
-            	registryCredential = 'dockerhub'
+            	registryCredential = 'saurabh-dockerhub'
           	}
           	steps {
 
