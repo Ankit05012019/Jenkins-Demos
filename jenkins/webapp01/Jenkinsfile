@@ -17,7 +17,7 @@ pipeline {
         	steps {
       
           		cleanWs()
-          		git credentialsId: 'GitHub', url: "https://github.com/${GITHUB_REPO}"
+          		git credentialsId: 'Ankit-git', url: "https://github.com/${GITHUB_REPO}"
               //git url: "https://github.com/${GITHUB_REPO}"
 	        }
 	    }
