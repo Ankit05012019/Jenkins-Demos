@@ -3,7 +3,7 @@ pipeline {
 	
 	environment {
 
-	  	//GITHUB_ORGANIZATION = "KoolKubernetes"	
+      GITHUB_ORGANIZATION = "Ankit05012019"	
       GITHUB_REPO = "Jenkins-Demos"
 	  	//DOCKERHUB_REGISTRY = "pf9sys/webapp01" This is no more required as it is declared in Jenkins as env. variable
       REPOSITORY_TAG="${DOCKERHUB_REGISTRY}:${env.BUILD_ID}"
@@ -17,7 +17,7 @@ pipeline {
         	steps {
       
           		cleanWs()
-          		git credentialsId: 'Ankit-git', url: "https://github.com/${GITHUB_REPO}"
+			git credentialsId: 'Ankit-git', url: "https://github.com/${GITHUB_ORGANIZATION}/${GITHUB_REPO}"
               //git url: "https://github.com/${GITHUB_REPO}"
 	        }
 	    }
